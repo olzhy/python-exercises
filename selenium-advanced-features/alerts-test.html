@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alerts, Prompts and Confirmations test</title>
+    <script>
+      function exampleAlert() {
+        alert("This is an example alert");
+      }
+
+      function exampleConfirm() {
+        let confirmed = confirm("Do you want to confirm?");
+        document.getElementById("confirmed").innerText = confirmed;
+      }
+
+      function examplePrompt() {
+        let favoriteSport = prompt(
+          "What is your favorite sport?",
+          "Basketball"
+        );
+        document.getElementById("favorite-sport").innerText = favoriteSport;
+      }
+    </script>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td><a onclick="exampleAlert()">Click to see an example alert</a></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <a onclick="exampleConfirm()">Click to see an example confirm</a>
+        </td>
+        <td><p id="confirmed"></p></td>
+      </tr>
+      <tr>
+        <td><a onclick="examplePrompt()">Click to see an example prompt</a></td>
+        <td><p id="favorite-sport"></p></td>
+      </tr>
+    </table>
+  </body>
+</html>
