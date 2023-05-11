@@ -1,7 +1,6 @@
 from unittest import TestCase
 from selenium import webdriver
 from pages.form import Form
-from pages.form_target import FormTarget
 
 
 class TestForm(TestCase):
@@ -28,8 +27,8 @@ class TestForm(TestCase):
         form_page.input_date('05/10/2023')
 
         # 点击 Submit 按钮
-        form_page.submit()
+        form_target_page = form_page.submit()
 
         # 断言
-        message = FormTarget(self.driver).get_message_text()
+        message = form_target_page.get_message_text()
         self.assertEqual(message, 'Received!')
