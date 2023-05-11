@@ -14,20 +14,12 @@ class TestForm(TestCase):
         form_page.open()
         self.assertEqual(form_page.get_title(), 'Web form')
 
-        # Text 输入
-        form_page.input_text('Selenium')
-
-        # Password 输入
-        form_page.input_password('Selenium')
-
-        # Dropdown 选择
-        form_page.select_from_dropdown('2')
-
-        # 日期输入
-        form_page.input_date('05/10/2023')
-
-        # 点击 Submit 按钮
-        form_target_page = form_page.submit()
+        # 输入
+        form_target_page = form_page.input_text('Selenium') \
+            .input_password('Selenium') \
+            .select_from_dropdown('2') \
+            .input_date('05/10/2023') \
+            .submit()
 
         # 断言
         message = form_target_page.get_message_text()
